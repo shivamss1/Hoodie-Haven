@@ -7,12 +7,13 @@
   <title>Hoodie Haven</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="../Styles/homepage.css">
 </head>
 
 <body>
   <!--NavBar of HomePage-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
     <div class="container ">
       <a class="navbar-brand" href="./Home.html"><img src="../Img/HH-logo.png" alt="Logo" style="height: 56px;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -37,16 +38,14 @@
             <a class="nav-link" href="#">Contact Us</a>
           </li>
           <li class="nav-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="2.2em" viewBox="0 0 24 24">
-              <path
-                d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2m0 7c2.67 0 8 1.33 8 4v3H4v-3c0-2.67 5.33-4 8-4m0 1.9c-2.97 0-6.1 1.46-6.1 2.1v1.1h12.2V17c0-.64-3.13-2.1-6.1-2.1" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+              </svg>
           </li>
           <li class="nav-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="2.2em" viewBox="0 0 24 24">
-              <path
-                d="M7.308 21.116q-.633 0-1.067-.434t-.433-1.066t.433-1.067q.434-.433 1.067-.433t1.066.433t.434 1.067t-.434 1.066t-1.066.434m9.384 0q-.632 0-1.066-.434t-.434-1.066t.434-1.067q.434-.433 1.066-.433t1.067.433q.433.434.433 1.067q0 .632-.433 1.066q-.434.434-1.067.434M5.881 5.5l2.669 5.616h6.635q.173 0 .307-.087q.135-.087.231-.24l2.616-4.75q.115-.212.019-.375q-.097-.164-.327-.164zm-.489-1h13.02q.651 0 .98.532q.33.531.035 1.095l-2.858 5.208q-.217.365-.564.573t-.763.208H8.1l-1.215 2.23q-.154.231-.01.5t.433.27h10.884v1H7.308q-.875 0-1.306-.738t-.021-1.482l1.504-2.68L3.808 3.5H2v-1h2.442zm3.158 6.616h7z" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+              </svg>
           </li>
         </ul>
       </div>
@@ -98,8 +97,8 @@
 </div>
 
 <!--Brand-logo Section-->
-<div class="brand-logos">
-  <div class="container-fluid">
+<div class="brand-logos bg-white">
+  <div class="container-fluid bg-white">
       <div class="row">
           <div class="col-md-12">
               <div class="logo-container">
@@ -127,7 +126,114 @@
   </div>
 </div>
 
-<!--Feaatured Product Section-->
+<!--Card Section-->
+<section class="container-fluid my-5">
+  <div class="row g-4">
+      <!-- Hoodie 1 -->
+      <div class="col-lg-4 col-md-6">
+          <div class="grid-item" style="background-image: url('../Img/hero1.jpg');">
+              <h2>Classic Hoodie</h2>
+              <a href="#" class="btn">Shop Now</a>
+          </div>
+      </div>
+      <!-- Hoodie 2 -->
+      <div class="col-lg-4 col-md-6">
+          <div class="grid-item" style="background-image: url('../Img/hero5.jpg');">
+              <h2>Sport Hoodie</h2>
+              <a href="#" class="btn">Shop Now</a>
+          </div>
+      </div>
+      <!-- Hoodie 3 -->
+      <div class="col-lg-4 col-md-12">
+          <div class="grid-item" style="background-image: url('../Img/hero3.jpg');">
+              <h2>Urban Hoodie</h2>
+              <a href="#" class="btn">Shop Now</a>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<!--Featured Card Section-->
+<div class="container-fluid my-5">
+  <h2 class="text-center mb-4">Featured Products</h2>
+  <div class="row">
+      <!-- Product Card 1 -->
+      <div class="col-md-4 mb-4">
+          <div class="card">
+              <img src="../Img/Men's Hoodies/Baja Hoodie/Mexican Poncho Baja Hoodie/4.jpg" class="card-img-top" alt="Product 1">
+              <div class="card-body">
+                  <h5 class="card-title">Mexican Poncho Baja Hoodie</h5>
+                  <p class="card-text">$29.99</p>
+                  <button class="btn-border-only">Buy Now</button>
+              </div>
+          </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="col-md-4 mb-4">
+          <div class="card" id="card1">
+              <img src="../Img/Women Hoodies/Oversized Hoodies women/Product 2/579ed9237a075770cbe56482972a2e13a1ff8dcd.avif" class="card-img-top" alt="Product 2">
+              <div class="card-body">
+                  <h5 class="card-title">Oversized Hoodies women</h5>
+                  <p class="card-text">$39.99</p>
+                  <button class="btn-border-only">Buy Now</button>
+              </div>
+          </div>
+      </div>
+      <!-- Product Card 3 -->
+      <div class="col-md-4 mb-4">
+          <div class="card">
+              <img src="../Img/Men's Hoodies/Motorcycle Hoodie/Stealth-Pro-Grey-Lifestyle-2-300x300.jpg" class="card-img-top" alt="Product 3">
+              <div class="card-body">
+                  <h5 class="card-title">Motorcycle Hoodie</h5>
+                  <p class="card-text">$49.99</p>
+                  <button class="btn-border-only">Buy Now</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!--Footer Section-->
+<footer class="footer">
+  <div class="container">
+      <div class="row">
+          <!-- Company Info -->
+          <div class="col-md-4">
+              <div class="footer-logo">
+                  <img src="../Img/HH-logo.png" alt="Hoodie Haven Logo">
+              </div>
+              <h5>Hoodie Haven</h5>
+              <p>Your one-stop shop for the trendiest hoodies and apparel.</p>
+          </div>
+          <!-- Navigation Links -->
+          <div class="col-md-4">
+              <h5>Quick Links</h5>
+              <ul class="list-unstyled">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Shop</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Contact Us</a></li>
+              </ul>
+          </div>
+          <!-- Social Media Links -->
+          <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+          </div>
+      </div>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+          <p>&copy; 2024 Hoodie Haven. All rights reserved.</p>
+      </div>
+  </div>
+</footer>
+
 
 
   <script src="../home.js"></script>
