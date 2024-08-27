@@ -1,0 +1,147 @@
+  
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.heading{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#PRODUCTS{
+    color: #28a745;
+    align-items: center;
+}
+.product-section {
+    display: flex;
+    padding: 20px;
+}
+
+.category {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+.category h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.category ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    color: #555;
+    border-bottom: 1px solid #eee;
+}
+
+.category ul li:hover {
+    color: #000;
+    font-weight: bold;
+}
+
+.products {
+    flex: 3;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: calc(33% - 20px);
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-card h3 {
+    margin: 15px 0 10px;
+    color: #333;
+    font-size: 18px;
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #777;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+}
+
+.add-to-cart {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.buy-now {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+/* Hover Effects */
+.add-to-cart:hover {
+    background-color: #0056b3; /* Darker shade of blue */
+}
+
+.buy-now:hover {
+    background-color: #218838; /* Darker shade of green */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-section {
+        flex-direction: column;
+    }
+    
+    .category {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .products {
+        justify-content: space-around;
+    }
+
+    .product-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
