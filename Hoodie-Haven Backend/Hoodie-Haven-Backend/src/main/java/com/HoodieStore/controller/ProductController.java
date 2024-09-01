@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -38,5 +39,10 @@ public class ProductController {
 	@PutMapping("/update-stock")
 	public void updateStock(@RequestParam("quantity") int quantity,@RequestParam("id") Long id) {
 		ps.updateStock(quantity,id);
+	}
+	
+	@GetMapping("/product/{id}")
+	public Product getProductById(@PathVariable("id") Long id) {
+		return ps.getProductById(id);
 	}
 }

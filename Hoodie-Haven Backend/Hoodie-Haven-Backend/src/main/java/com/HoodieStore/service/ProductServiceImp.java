@@ -39,6 +39,17 @@ public class ProductServiceImp implements ProductService{
 		}
 		pr.save(product.get());
 	}
+	
+	
+	@Override
+	public Product getProductById(Long id) {
+		Optional<Product> product=pr.findById(id);
+		if(product.isPresent()) {
+			return product.get();
+		}
+			return new Product();
+		
+	}
 
   
 	
