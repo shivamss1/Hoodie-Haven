@@ -13,4 +13,6 @@ public interface ProductService {
 	public String deleteproduct(Long id) ;
 	
 	public void updateStock(int quantity,Long id);
+	
+	public Product getProductById(Long id);
 }
