@@ -16,24 +16,13 @@ public class ContactUsServiceImpl implements ContactUsService {
     private ContactRepository contactRepository;
 
     @Override
-    public contactus submitContactForm(contactus contact) {
-       return contactRepository.save(contact);
+    public String submitContactForm(contactus contact) {
+       contactRepository.save(contact);
+       return "form submitted & massage recieved";
     }
 
     @Override
     public List<contactus> getAllContacts() {
         return contactRepository.findAll();
-    }
-
-    @Override
-    public contactus getContactById(Long id) {
-        Optional<contactus> contact = contactRepository.findById(id);
-        return contact.orElseGet(contactus::new); 
-    }
-
-    @Override
-    public String deleteContact(Long id) {
-        contactRepository.deleteById(id);
-        return "Contact has been successfully deleted.";
     }
 }
