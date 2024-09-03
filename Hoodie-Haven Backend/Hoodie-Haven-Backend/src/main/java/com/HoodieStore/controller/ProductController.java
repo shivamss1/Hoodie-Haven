@@ -3,6 +3,7 @@ package com.HoodieStore.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,11 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.HoodieStore.model.Product;
 import com.HoodieStore.service.ProductServiceImp;
 
+@CrossOrigin("*")
 @RestController
 public class ProductController {
 	
 	@Autowired
-	ProductServiceImp ps;
+	private ProductServiceImp ps;
 	
 	@PostMapping("/add-product")
 	public Product addProduct(@RequestBody Product product) {

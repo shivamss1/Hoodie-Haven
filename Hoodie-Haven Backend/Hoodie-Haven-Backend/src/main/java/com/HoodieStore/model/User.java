@@ -8,31 +8,26 @@ import jakarta.persistence.Id;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @NoArgsConstructor
+
 @Entity
-public class Product {
-	
+public class User {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long p_id;
+	private Long id;
 	
-	@Column(name = "Product-title")
-	private String title;
+	@Column(unique = true,nullable = false)
+	private String username;
 	
-	private String description;
+	@Column(nullable = false ,unique = true)
+	private String mailid;
 	
-	private float price;
+	@Column(nullable = false)
+	private String mobileno;
 	
-	private int quantity;
-	
-	private String size;
-	
-	private int stock;
-	
-	private String category;
-	
-	private String image;
+	@Column(nullable = false)
+	private String password;
 	
 }
