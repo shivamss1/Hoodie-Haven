@@ -102,6 +102,7 @@ p {
 }
 
 .product_detail{
+
     display:flex;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -109,6 +110,7 @@ p {
     margin-right: 10px;
     width: 98%;
     height: auto;
+
     background: white;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -243,4 +245,86 @@ p {
 #button-container button:hover {
     background-color: #0056b3; /* Darker background on hover */
     transform: scale(1.05); /* Slightly enlarge button on hover */
-}}
+
+}
+/* Media query for screens 768px and smaller */
+@media (max-width: 768px) {
+    .product_detail {
+        flex-direction: column;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .images {
+        width: 100%;
+        padding: 0;
+    }
+
+    .info {
+        padding: 0;
+    }
+
+    .main-image {
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .extra_image img {
+        width: 80px;
+    }
+
+    .cont1 {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .size-selection, 
+    .quantity-container {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    #button-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    #button-container button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Media query for screens 480px and smaller */
+@media (max-width: 480px) {
+    #price {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .extra_image img {
+        width: 70px;
+    }
+
+    .size-selection label {
+        font-size: 16px;
+    }
+
+    .quantity-button {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    #quantity {
+        width: 40px;
+        font-size: 14px;
+    }
+}
+
