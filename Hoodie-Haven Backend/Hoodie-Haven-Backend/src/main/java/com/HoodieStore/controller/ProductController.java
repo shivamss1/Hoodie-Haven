@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.HoodieStore.model.Product;
 import com.HoodieStore.service.ProductServiceImp;
 
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class ProductController {
 	
@@ -43,8 +43,8 @@ public class ProductController {
 		ps.updateStock(quantity,id);
 	}
 	
-	@GetMapping("/product/{id}")
-	public Product getProductById(@PathVariable("id") Long id) {
+	@GetMapping("/product")
+	public Product getProductById(@RequestParam("id") Long id) {
 		return ps.getProductById(id);
 	}
 }
