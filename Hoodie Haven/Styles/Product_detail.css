@@ -1,69 +1,10 @@
-/* Ensure container margin */
-.container {
-    margin-top: 5rem; /* Adjust top margin for spacing */
-}
-
-/* Main Image Styles */
-.main-image img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Extra Images */
-.extra_image {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.extra_image img {
-    width: 100%;
-    max-width: 100px; /* Adjust as needed */
-    height: auto;
-}
-
-/* Title and Price */
-#title {
-    font-size: 2rem;
-    color: #aa0f0f;
-}
-
-#price {
-    font-size: 1.5rem;
-    color: #5c0404;
-}
-
-/* Description */
-p {
-    font-size: 1rem;
-    color: #200505;
-    line-height: 1.6;
-}
-
-/* Buttons */
-#button-container button {
-    margin-right: 10px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .extra_image img {
-        max-width: 80px; /* Smaller extra images for tablets */
-    }
-
-    .quantity-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .quantity-button {
-        width: 40px;
-        height: 40px;
-    }
-
-    #quantity {
-        width: 60px;
-    }
+body {
+    justify-content: center; 
+    align-items: center; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 #price {
     margin: 10px 0;
@@ -96,9 +37,9 @@ p {
 }
 .info{
     padding: 10px;
-    text-align: left; /* Ensure text is left-aligned */
-    margin: 0; /* Remove any margin that might affect alignment */
-    flex: 1; /* Allow the .info section to grow and take up available space */
+    text-align: left; 
+    margin: 0; 
+    flex: 1; 
     display: block; 
 }
 .images{
@@ -107,27 +48,27 @@ p {
 }
 .main-image{
     display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center;     /* Vertically center */
-    height: 300px;           /* Set a height for the container */
+    justify-content: center; 
+    align-items: center;    
+    height: 300px;          
     border: 1px solid #ddd;  
-    height: 300px;           /* Adjust height as needed */
+    height: 300px;           
     margin-bottom: 20px;
      
 }
 .main-image img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Preserve aspect ratio */
+    object-fit: contain; 
 }
 
 .extra_image{
     display: flex;
-    overflow-x: auto; /* Allows horizontal scrolling */
-    gap: 10px; /* Space between images */
+    overflow-x: auto;
+    gap: 10px;
 }
 .extra_image img{
-    width: 100px; /* Adjust width as needed */
+    width: 100px; 
     height: auto;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -160,8 +101,8 @@ p {
     font-size: 18px;
 }
 #addtocart {
-    background-color: #007bff; /* Blue color */
-    color: white; /* Text color */
+    background-color: #007bff; 
+    color: white;
 }
 #buynow{
     background: #01ad1b;
@@ -213,13 +154,12 @@ p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    transition: background-color 0.3s, transform 0.3s;
     margin-bottom: 5px;
 }
 #button-container button:hover {
-    background-color: #0056b3; /* Darker background on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-
+    background-color: #0056b3; 
+    transform: scale(1.05); 
 }
 @media (max-width: 768px) {
     .product_detail {
