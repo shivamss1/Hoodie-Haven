@@ -63,42 +63,47 @@
         </div>
     </nav>
     <div class="product_detail">
-        <div class="main-image">
-            <img src="../Img/HH-logo.png" alt="">
-        </div>
-        <div class="extra_image">
-            <img src="../Img/HH-logo.png" alt="image 1">
-            <img src="../Img/HH-logo.png" alt="image2">
-            <img src="../Img/HH-logo.png" alt="image3">
-            <img src="../Img/HH-logo.png" alt="image4">
-        </div>
-        <h2 id="title">title</h2>
-        <div class="cont1">
-            <div>
-                <h4 id="price">$price</h4>
+        <div class="images">
+            <div class="main-image">
+                <img src="../Img/HH-logo.png" alt="">
             </div>
-            <div class="size-selection">
-                <label for="size">Size:</label>
-                <select id="size" class="form-control">
-                    <option value="s">S</option>
-                    <option value="m">M</option>
-                    <option value="l">L</option>
-                    <option value="xl">XL</option>
-                    <option value="xxl">XXL</option>
-                </select>
+            <div class="extra_image">
+                <img src="../Img/HH-logo.png" alt="image 1">
+                <img src="../Img/HH-logo.png" alt="image2">
+                <img src="../Img/HH-logo.png" alt="image3">
+                <img src="../Img/HH-logo.png" alt="image4">
+            </div>
+        </div>
+        <div class="info">
+            <h2 id="title">title</h2>
+            <div class="cont1">
+                <div>
+                    <h4 id="price">$price</h4>
+                </div>
+                <div class="size-selection">
+                    <label for="size">Size:</label>
+                    <select id="size" class="form-control">
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+                </div>
+                
+                <div class="quantity-container">
+                    <button class="quantity-button" id="decrease">-</button>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button class="quantity-button" id="increase">+</button>
+                </div>
             </div>
             
-            <div class="quantity-container">
-                <button class="quantity-button" id="decrease">-</button>
-                <input type="number" id="quantity" value="1" min="1">
-                <button class="quantity-button" id="increase">+</button>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae libero natus similique minus deleniti voluptatum iure, sed, explicabo repudiandae nihil magnam in, aliquid accusantium quaerat cupiditate. Error illum qui aliquam.</p>
+            <div id="button-container">
+                <button>Add-to-cart</button>
+                <button>Buy Now</button>
             </div>
-        </div>
-        
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae libero natus similique minus deleniti voluptatum iure, sed, explicabo repudiandae nihil magnam in, aliquid accusantium quaerat cupiditate. Error illum qui aliquam.</p>
-        <div id="button-container">
-            <button>Add-to-cart</button>
-            <button>Buy Now</button>
+    
         </div>
 
     </div>
