@@ -1,3 +1,4 @@
+body { 
 body {
     justify-content: center; 
     align-items: center; 
@@ -20,6 +21,7 @@ p {
 }
 
 .product_detail{
+
     display:flex;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -27,6 +29,7 @@ p {
     margin-right: 10px;
     width: 98%;
     height: auto;
+
     background: white;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -161,6 +164,7 @@ p {
 #button-container button:hover {
     background-color: #0056b3; /* Darker background on hover */
     transform: scale(1.05); /* Slightly enlarge button on hover */
+
 }
 /* Media query for screens 768px and smaller */
 @media (max-width: 768px) {
@@ -242,3 +246,4 @@ p {
         font-size: 14px;
     }
 }
+
