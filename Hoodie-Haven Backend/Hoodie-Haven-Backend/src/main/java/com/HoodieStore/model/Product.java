@@ -1,5 +1,7 @@
 package com.HoodieStore.model;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,6 +35,9 @@ public class Product {
 	
 	private String category;
 	
-	private String image;
+	private String mainimage;
+	
+	private List<String> extraimage;
+	
 	
 }

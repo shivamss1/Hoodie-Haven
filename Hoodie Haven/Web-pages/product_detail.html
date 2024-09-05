@@ -64,48 +64,62 @@
     </nav>
 
     <!--Product Detail section-->
-    <div class="product_detail">
-        <div class="main-image">
-            <img src="../Img/HH-logo.png" alt="">
-        </div>
-        <div class="extra_image">
-            <img src="../Img/HH-logo.png" alt="image 1">
-            <img src="../Img/HH-logo.png" alt="image2">
-            <img src="../Img/HH-logo.png" alt="image3">
-            <img src="../Img/HH-logo.png" alt="image4">
-        </div>
-        <h2 id="title">title</h2>
-        <div class="cont1">
-            <div>
-                <h4 id="price">$price</h4>
-            </div>
-            <div class="size-selection">
-                <label for="size">Size:</label>
-                <select id="size" class="form-control">
-                    <option value="s">S</option>
-                    <option value="m">M</option>
-                    <option value="l">L</option>
-                    <option value="xl">XL</option>
-                    <option value="xxl">XXL</option>
-                </select>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Images Section -->
+            <div class="col-lg-5 col-md-6 mb-4">
+                <div class="main-image">
+                    <img src="../Img/Men's Hoodies/Baja Hoodie/Mexican Poncho Baja Hoodie/3.jpg"
+                        alt="Main Product Image" class="img-fluid">
+                </div>
+                <div class="extra_image mt-3">
+                    <img src="../Img/Men's Hoodies/Baja Hoodie/Mexican Poncho Baja Hoodie/4.jpg" alt="image 1"
+                        class="img-thumbnail">
+                    <img src="../Img/Men's Hoodies/Baja Hoodie/Mexican Poncho Baja Hoodie/5.jpg" alt="image 2"
+                        class="img-thumbnail">
+                    <img src="../Img/Men's Hoodies/Baja Hoodie/Mexican Poncho Baja Hoodie/1.jpg" alt="image 3"
+                        class="img-thumbnail">
+                    <img src="../Img/Men's Hoodies/Baja Hoodie/Mexican Poncho Baja Hoodie/il_794xN.4070653530_6vie.jpg"
+                        class="img-thumbnail">
+                </div>
             </div>
 
-            <div class="quantity-container">
-                <button class="quantity-button" id="decrease">-</button>
-                <input type="number" id="quantity" value="1" min="1">
-                <button class="quantity-button" id="increase">+</button>
+            <!-- Product Info Section -->
+            <div class="col-lg-7 col-md-6">
+                <h2 id="title">baja</h2>
+                <h4 id="price">$99.99</h4>
+
+                <div class="form-group size-selection">
+                    <label for="size">Size:</label>
+                    <select id="size" class="form-control">
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+                </div>
+
+                <div class="quantity-container form-group mt-3">
+                    <button class="btn btn-secondary quantity-button" id="decrease">-</button>
+                    <input type="number" id="quantity" value="1" min="1" class="form-control d-inline-block"
+                        style="width: 60px;">
+                    <button class="btn btn-secondary quantity-button" id="increase">+</button>
+                </div>
+
+                <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, nostrum possimus? Non
+                    dolorem dolores numquam facere voluptates voluptatum dolor nam qui architecto mollitia?</p>
+
+                <div id="button-container" class="mt-3">
+                    <button class="btn btn-primary">Add to Cart</button>
+                    <button class="btn btn-success">Buy Now</button>
+                </div>
             </div>
         </div>
-
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae libero natus similique minus deleniti
-            voluptatum iure, sed, explicabo repudiandae nihil magnam in, aliquid accusantium quaerat cupiditate. Error
-            illum qui aliquam.</p>
-        <div id="button-container">
-            <button>Add-to-cart</button>
-            <button>Buy Now</button>
-        </div>
-
     </div>
+
+
+
 
     <!--Footer Section-->
     <footer class="footer">
