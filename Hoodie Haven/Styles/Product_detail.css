@@ -7,6 +7,87 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
+/* Media query for screens 768px and smaller */
+@media (max-width: 768px) {
+    .product_detail {
+        flex-direction: column;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .images {
+        width: 100%;
+        padding: 0;
+    }
+
+    .info {
+        padding: 0;
+    }
+
+    .main-image {
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .extra_image img {
+        width: 80px;
+    }
+
+    .cont1 {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .size-selection, 
+    .quantity-container {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    #button-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    #button-container button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Media query for screens 480px and smaller */
+@media (max-width: 480px) {
+    #price {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .extra_image img {
+        width: 70px;
+    }
+
+    .size-selection label {
+        font-size: 16px;
+    }
+
+    .quantity-button {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    #quantity {
+        width: 40px;
+        font-size: 14px;
+    }
+}
+
 #price {
     margin: 10px 0;
     font-size: 24px;
