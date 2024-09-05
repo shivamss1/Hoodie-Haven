@@ -27,7 +27,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/userlogin")
-	public String userLogin(@RequestParam("uname") String username,@RequestParam("password") String password) {
+	public String userLogin(@RequestParam("username") String username,@RequestParam("password") String password) {
 		return userServiceImpl.userLogin(username, password);
 	}
 
