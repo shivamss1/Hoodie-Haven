@@ -65,41 +65,6 @@ p {
         width: 60px;
     }
 }
-
-@media (max-width: 480px) {
-    #title {
-        font-size: 1.5rem;
-    }
-
-    #price {
-        font-size: 1.25rem;
-    }
-
-    p {
-        font-size: 0.875rem;
-    }
-
-    .extra_image img {
-        max-width: 60px; /* Smaller images for mobile */
-    }
-
-    .quantity-button {
-        width: 30px;
-        height: 30px;
-    }
-
-    #quantity {
-        width: 50px;
-    }
-
-    #button-container button {
-        padding: 10px;
-        font-size: 0.875rem; /* Ensure buttons fit on mobile screens */
-    }
-}
-
-
-
 #price {
     margin: 10px 0;
     font-size: 24px;
@@ -114,7 +79,6 @@ p {
 }
 
 .product_detail{
-
     display:flex;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -122,7 +86,6 @@ p {
     margin-right: 10px;
     width: 98%;
     height: auto;
-
     background: white;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -258,7 +221,6 @@ p {
     transform: scale(1.05); /* Slightly enlarge button on hover */
 
 }
-/* Media query for screens 768px and smaller */
 @media (max-width: 768px) {
     .product_detail {
         flex-direction: column;
@@ -309,7 +271,6 @@ p {
     }
 }
 
-/* Media query for screens 480px and smaller */
 @media (max-width: 480px) {
     #price {
         font-size: 20px;
@@ -338,4 +299,3 @@ p {
         font-size: 14px;
     }
 }
-
