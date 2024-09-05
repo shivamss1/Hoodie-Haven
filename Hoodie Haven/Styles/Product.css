@@ -83,8 +83,8 @@ body {
 
 .product-card img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 300px;
+    object-fit: contain;
     border-bottom: 1px solid #ddd;
     margin-bottom: 15px;
 }
