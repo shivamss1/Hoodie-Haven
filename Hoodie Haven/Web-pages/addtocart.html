@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>addtocart</title>
+    <title>Add to Cart</title>
+    <link rel="stylesheet" href="../Styles/addtocart.css">
 </head>
 <body>
+    <div>
+        <h2 id="cart">cart page</h2>
+    </div>
+    <div id="cart-container">
+        <div class="product-details">
+            <img src="../Img/hero1.jpg" alt="Product Name" class="product-image">
+            <h1 class="product-name">Product Name</h1>
+            <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, consectetur neque aperiam incidunt itaque cum. Mollitia molestias assumenda reiciendis, adipisci voluptas voluptatem aspernatur neque qui temporibus eos repellendus quam modi!</p>
+            <span class="price">$Price</span>
     
+            <form class="add-to-cart-form">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1">
+            </form>
+            <div class="button">
+                <button class="continue-shopping">Continue Shopping</button>
+                <button class="checkout-button">Proceed to Checkout</button>
+                <button class="remove-button">Romove-Product</button>
+            </div>
+        </div>
+        <div class="product-details">
+            <img src="../Img/hero1.jpg" alt="Product Name" class="product-image">
+            <h1 class="product-name">Product Name</h1>
+            <p class="product-description">Brief description of the product.</p>
+            <span class="price">$Price</span>
+    
+            <form class="add-to-cart-form">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1">
+            </form>
+           <div class="button">
+            <button class="continue-shopping">Continue Shopping</button>
+            <button class="checkout-button">Proceed to Checkout</button>
+            <button class="remove-button">Romove-Product</button>
+           </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
+s
