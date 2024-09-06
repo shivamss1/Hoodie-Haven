@@ -1,11 +1,105 @@
-body {
-    justify-content: center; 
-    align-items: center; 
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+/* Ensure container margin */
+.container {
+    margin-top: 5rem; /* Adjust top margin for spacing */
 }
+
+/* Main Image Styles */
+.main-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Extra Images */
+.extra_image {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.extra_image img {
+    width: 100%;
+    max-width: 100px; /* Adjust as needed */
+    height: auto;
+}
+
+/* Title and Price */
+#title {
+    font-size: 2rem;
+    color: #aa0f0f;
+}
+
+#price {
+    font-size: 1.5rem;
+    color: #5c0404;
+}
+
+/* Description */
+p {
+    font-size: 1rem;
+    color: #200505;
+    line-height: 1.6;
+}
+
+/* Buttons */
+#button-container button {
+    margin-right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .extra_image img {
+        max-width: 80px; /* Smaller extra images for tablets */
+    }
+
+    .quantity-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .quantity-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    #quantity {
+        width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    #title {
+        font-size: 1.5rem;
+    }
+
+    #price {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.875rem;
+    }
+
+    .extra_image img {
+        max-width: 60px; /* Smaller images for mobile */
+    }
+
+    .quantity-button {
+        width: 30px;
+        height: 30px;
+    }
+
+    #quantity {
+        width: 50px;
+    }
+
+    #button-container button {
+        padding: 10px;
+        font-size: 0.875rem; /* Ensure buttons fit on mobile screens */
+    }
+}
+
+
+
 #price {
     margin: 10px 0;
     font-size: 24px;
@@ -20,6 +114,7 @@ p {
 }
 
 .product_detail{
+
     display:flex;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -27,6 +122,7 @@ p {
     margin-right: 10px;
     width: 98%;
     height: auto;
+
     background: white;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -160,6 +256,7 @@ p {
 #button-container button:hover {
     background-color: #0056b3; /* Darker background on hover */
     transform: scale(1.05); /* Slightly enlarge button on hover */
+
 }
 /* Media query for screens 768px and smaller */
 @media (max-width: 768px) {
@@ -241,3 +338,4 @@ p {
         font-size: 14px;
     }
 }
+

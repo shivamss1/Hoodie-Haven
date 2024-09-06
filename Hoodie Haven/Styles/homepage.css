@@ -162,6 +162,11 @@
     color: #fff;
     padding: 40px 0;
 }
+
+.footer p{
+    color: #fff;
+}
+
 .footer a {
     color: #fff;
     text-decoration: none;
@@ -176,8 +181,12 @@
 .footer-bottom {
     padding: 10px 0;
     text-align: center;
-    border-top: 1px solid #444;
+    border-top: 1px solid #faf7f7;
     margin-top: 20px;
+}
+
+.footer-bottom p{
+    color: #fff;
 }
 
 .footer-logo img{

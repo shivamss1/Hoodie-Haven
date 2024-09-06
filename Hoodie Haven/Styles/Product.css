@@ -12,34 +12,38 @@ body {
 .heading {
     text-align: center;
     padding: 20px;
-    background-color: #006d77;
+    background-color: coral;
     color: #fff;
 }
 
 .heading h1 {
     margin: 0;
     font-size: 2.5em;
+    text-transform: capitalize;
 }
 
 /* Product Section */
 .product-section {
     display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
+    /* max-width: 1200px; */
+    width: 100%;
+    margin: 0 10px;
     padding: 20px;
     flex-wrap: wrap;
 }
 
+
 /* Category Section */
 .category {
     flex: 1;
-    margin-right: 20px;
+    max-width: 250px;
 }
 
 .category h2 {
     margin-bottom: 10px;
-    font-size: 1.8em;
-    color: #006d77;
+    font-size: 2.5rem;
+    color: black;
+    text-transform: capitalize;
 }
 
 .category ul {
@@ -48,15 +52,15 @@ body {
 }
 
 .category li {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     font-size: 1.2em;
     cursor: pointer;
-    color: #0096c7;
+    color: black;
 }
 
-.category li:hover {
+/* .category li:hover {
     text-decoration: underline;
-}
+} */
 
 /* Products Section */
 .products {
@@ -105,7 +109,7 @@ body {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px 0;
-    background-color: #006d77;
+    background-color: rgb(33, 33, 33);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -115,7 +119,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #005f6b;
+    background-color: rgba(39, 40, 39, 0.616);
 }
 
 .add-to-cart {
@@ -123,11 +127,11 @@ body {
 }
 
 .buy-now {
-    background-color: #118ab2;
+    background-color: coral;
 }
 
 .buy-now:hover {
-    background-color: #0d6990;
+    background-color: rgba(58, 230, 58, 0.619);
 }
 
 /* Responsive Design */

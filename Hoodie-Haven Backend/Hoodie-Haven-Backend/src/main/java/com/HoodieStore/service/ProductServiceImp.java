@@ -1,10 +1,12 @@
 package com.HoodieStore.service;
 
+import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.HoodieStore.model.Product;
 import com.HoodieStore.repository.ProductRepository;
@@ -15,11 +17,9 @@ import com.HoodieStore.repository.ProductRepository;
 public class ProductServiceImp implements ProductService{
 	@Autowired
 	ProductRepository pr;
+	
 
-	@Override
-	public Product addproduct(Product product) {
-		return pr.save(product);
-	}
+	
 	@Override
 	public List<Product> getProduct() {
 		return pr.findAll();
@@ -49,6 +49,11 @@ public class ProductServiceImp implements ProductService{
 		}
 			return new Product();
 		
+	}
+
+	@Override
+	public Product addproduct(Product product) {
+		return pr.save(product);
 	}
 
   
