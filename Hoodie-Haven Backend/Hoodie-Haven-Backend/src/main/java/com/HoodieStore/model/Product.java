@@ -3,6 +3,7 @@ package com.HoodieStore.model;
 import java.util.List;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class Product {
 	@Column(name = "Product-title")
 	private String title;
 	
+	@Column(length = 1000)
 	private String description;
 	
 	private float price;
@@ -35,9 +37,12 @@ public class Product {
 	
 	private String category;
 	
-	private String mainimage;
+	@Column(name = "mainimage",columnDefinition = "LONGBLOB")
+	private byte[] mainimage;
 	
-	private List<String> extraimage;
+	@Column(columnDefinition = "LONGBLOB")
+	@ElementCollection
+	private List<byte[]> extraimage;
 	
 	
 }

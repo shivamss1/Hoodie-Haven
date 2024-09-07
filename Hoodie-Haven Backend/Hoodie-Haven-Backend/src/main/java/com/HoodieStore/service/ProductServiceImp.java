@@ -1,6 +1,9 @@
 package com.HoodieStore.service;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,9 +54,38 @@ public class ProductServiceImp implements ProductService{
 		
 	}
 
+	
 	@Override
-	public Product addproduct(Product product) {
-		return pr.save(product);
+	public Product addproduct(
+			String productTitle, 
+			String productDescription,
+			String productcategory, 
+			int productStock,
+			String productSize, 
+			float productPrice,
+			int productQuantity,
+			MultipartFile file,
+			List<MultipartFile> filelist) throws IOException  {
+		
+		Product newProduct =new Product();
+		
+		newProduct.setTitle(productTitle);
+		newProduct.setDescription(productDescription);
+		newProduct.setCategory(productcategory);
+		newProduct.setPrice(productPrice);
+		newProduct.setQuantity(productQuantity);
+		newProduct.setSize(productSize);
+		newProduct.setStock(productStock);
+		newProduct.setMainimage(file.getBytes());
+		
+		List<byte[]> extraImageByte =new ArrayList<>();
+		for (MultipartFile multipartFile : filelist) {
+			extraImageByte.add(multipartFile.getBytes());
+		}
+		
+		newProduct.setExtraimage(extraImageByte);
+		
+		return pr.save(newProduct);
 	}
 
   
