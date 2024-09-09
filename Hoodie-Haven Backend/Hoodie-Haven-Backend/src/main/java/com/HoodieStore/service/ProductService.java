@@ -15,4 +15,6 @@ public interface ProductService {
 	public void updateStock(int quantity,Long id);
 	
 	public Product getProductById(Long id);
+
+	List<Product> getProductsByCategory(String category);
 }
