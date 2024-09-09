@@ -6,8 +6,7 @@ import java.util.List;
 import com.HoodieStore.model.Cart;
 
 public interface CartService {
-	 Cart addtocart(int productId);
-	 Cart getcartbyId(int cartId);
+	 Cart addtocart(long productId);
 	 String deletebycartId(int cartId);
 	  List<Cart> getcart();
 	

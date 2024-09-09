@@ -18,4 +18,7 @@ public interface ProductService {
 	public Product getProductById(Long id);
 
 	Product addproduct(Product product);
+	
+    List<Product> getProductsByCategory(String category);
+	 
 }

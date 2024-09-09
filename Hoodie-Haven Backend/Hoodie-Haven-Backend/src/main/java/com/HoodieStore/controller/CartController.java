@@ -22,10 +22,7 @@ public class CartController {
 	public Cart addtocart(int productId) {
 		return cartService.addtocart(productId);
 	}
-	@GetMapping("/getcartbyId")
-	public Cart getcartbyId(int cartId) {
-		return cartService.getcartbyId(cartId);
-	}
+	
 	@DeleteMapping("/deletebycartId")
 	public String deletebycartId(@RequestParam ("cartid") int cartid) {
 		return cartService.deletebycartId(cartid);

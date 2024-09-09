@@ -21,8 +21,8 @@ public class CartServiceImpl implements CartService {
     private ProductRepository productRepository;
 
     @Override
-    public Cart addtocart(int productId) {
-        Optional<Product> optionalProduct = productRepository.findById((long) productId);
+    public Cart addtocart(long productId) {
+        Optional<Product> optionalProduct = productRepository.findById( productId);
             Product product = optionalProduct.get();
             Cart cart = new Cart();
              cart.setProduct(product);
@@ -30,13 +30,6 @@ public class CartServiceImpl implements CartService {
             
             return cr.save(cart);
       
-    }
-    public Cart getcartbyId(int CartId) {
-    	Optional<Cart> cart=cr.findById(CartId);
-		if(cart.isPresent()) {
-			return cart.get();
-		}
-			return new Cart();
     }
     public String deletebycartId(int cartId) {
     	Optional<Cart> cart=cr.findById(cartId);

@@ -49,4 +49,9 @@ public class ProductController {
 	public Product getProductById(@RequestParam("id") Long id) {
 		return ps.getProductById(id);
 	}
+	@GetMapping("/category")
+	public List<Product> getProductsByCategory(@RequestParam("category") String category){
+		return ps.getProductsByCategory(category);
+	}
+	 
 }
