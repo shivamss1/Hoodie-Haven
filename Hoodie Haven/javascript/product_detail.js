@@ -9,13 +9,13 @@ let product_detail = async () => {
     product.innerHTML = `   
                         <div class="col-lg-5 col-md-6 mb-4">
                     <div class="main-image">
-                        <img src="${product_data.mainimage}" alt="Main Product Image" class="img-fluid">
+                        <img src="data:image/jpeg;base64,${product_data.mainimage}" alt="Main Product Image" class="img-fluid">
                     </div>
                     <div class="extra_image mt-3">
-                        <img src="${product_data.extraimage[0]}" alt="image 1" class="img-thumbnail">
-                        <img src="${product_data.extraimage[1]}" alt="image 2" class="img-thumbnail">
-                        <img src="${product_data.extraimage[2]}" alt="image 3" class="img-thumbnail">
-                        <img src="${product_data.extraimage[3]}" class="img-thumbnail">
+                        <img src="data:image/jpeg;base64,${product_data.extraimage[0]}" alt="image 1" class="img-thumbnail">
+                        <img src="data:image/jpeg;base64,${product_data.extraimage[1]}" alt="image 2" class="img-thumbnail">
+                        <img src="data:image/jpeg;base64,${product_data.extraimage[2]}" alt="image 3" class="img-thumbnail">
+                        <img src="data:image/jpeg;base64,${product_data.extraimage[3]}" class="img-thumbnail">
                     </div>
                 </div>
         

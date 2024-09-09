@@ -9,7 +9,7 @@ let displayProduct = async () => {
         productDiv.innerHTML +=`
         <div class="product-card">
                 <a href="../Web-pages/product_detail.html?id=${element.p_id}">
-                    <img src="${element.mainimage}" alt="Product 3">
+                    <img src="data:image/jpeg;base64,${element.mainimage}" alt="Product 3">
                 </a>
                 <h3>${element.title}</h3>
                 <p>$ ${element.price}</p>

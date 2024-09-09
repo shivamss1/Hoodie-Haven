@@ -11,8 +11,9 @@ body{
 }
 
 .admin{
-    background-color: coral;
+    background-color: black;
     margin: 15px 0;
+    color: #fff;
 }
 
 .admin strong>h1{
@@ -22,7 +23,7 @@ body{
 
 .menu-tab{
     width: 300px;
-    background-color: blue;
+    background-color: coral;
     border-right: 2px solid black;
 }
 
@@ -31,7 +32,7 @@ body{
 }
 
 .menu-tab .group-items a{
-    color: #fff;
+    color: #000;
     font-weight: 500;
     font-size: 20px;
     text-decoration: none;
