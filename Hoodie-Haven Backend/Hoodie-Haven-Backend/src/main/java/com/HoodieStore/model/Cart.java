@@ -1,33 +1,24 @@
 package com.HoodieStore.model;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
 @Data
 @NoArgsConstructor
-
-@Entity
-public class User {
-
+public class Cart {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    private int cartId;
+	@OneToOne
+	 @JoinColumn(name = "product_id")
+	private Product product;
 	
-	@Column(unique = true,nullable = false)
-	private String username;
 	
-	@Column(nullable = false ,unique = true)
-	private String mailid;
-	
-	@Column(nullable = false)
-	private String mobileno;
-	
-	@Column(nullable = false)
-	private String password;
 	
 }
