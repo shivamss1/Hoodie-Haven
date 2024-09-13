@@ -10,5 +10,7 @@ import com.HoodieStore.model.User;
 public interface UserRepository extends JpaRepository<User, Long>{
 	Optional<User> findByusername(String username);
 
+	
+
 
 }

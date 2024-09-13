@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService{
 
 	@Autowired
 	private UserRepository userRepository;
-	
+
 	@Override
 	public String registerUser(User user) {
 	 Optional<User> extistusername= userRepository.findByusername(user.getUsername());
@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService{
 		 return "User Registered Successfully.";
 	 }
 	}
-	
+
 	@Override
 	public String userLogin(String username, String password) {
 		Optional <User> user=userRepository.findByusername(username);

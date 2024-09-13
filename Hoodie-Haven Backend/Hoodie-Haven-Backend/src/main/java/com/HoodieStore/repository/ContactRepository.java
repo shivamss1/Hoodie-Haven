@@ -6,5 +6,5 @@ import com.HoodieStore.model.contactus;
 
 @Repository
 public interface ContactRepository extends JpaRepository<contactus, Long> {
-   
+
 }
