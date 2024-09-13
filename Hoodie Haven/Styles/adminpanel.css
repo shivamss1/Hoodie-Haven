@@ -1,0 +1,52 @@
+*{
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.admin{
+    background-color: black;
+    margin: 15px 0;
+    color: #fff;
+}
+
+.admin strong>h1{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.menu-tab{
+    width: 300px;
+    background-color: coral;
+    border-right: 2px solid black;
+}
+
+.menu-tab .group-items{
+    margin-top: 10px;
+}
+
+.menu-tab .group-items a{
+    color: #000;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.menu-tab ul hr{
+    border: 1px solid white;
+}
+
+
+.admin-home{
+    background-color: cadetblue;
+}
+
+.admin-home h2{
+    text-align: center;
+}

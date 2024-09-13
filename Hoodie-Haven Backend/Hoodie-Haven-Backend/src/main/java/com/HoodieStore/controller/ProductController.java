@@ -1,5 +1,6 @@
 package com.HoodieStore.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -26,8 +28,16 @@ public class ProductController {
 	private ProductServiceImp ps;
 
 	@PostMapping("/add-product")
-	public Product addProduct(@RequestBody Product product) {
-		return ps.addproduct(product);
+	public Product addProduct( @RequestParam("productTitle") String productTitle,
+            @RequestParam("productDescription") String productDescription,
+            @RequestParam("productPrice") float productPrice,
+            @RequestParam("productQuantity") int productQuantity,
+            @RequestParam("productSize") String productSize,
+            @RequestParam("productStock") int productStock,
+            @RequestParam("productcategory") String productcategory,
+            @RequestPart("mainImage") MultipartFile file,
+            @RequestPart("imageList") List<MultipartFile> filelist) throws IOException {
+		return ps.addproduct(productTitle,productDescription,productcategory,productStock,productSize,productPrice,productQuantity,file,filelist);
 	}
 
 	@GetMapping("/products")

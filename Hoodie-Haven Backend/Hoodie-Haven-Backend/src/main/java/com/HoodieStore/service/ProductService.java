@@ -1,5 +1,6 @@
 package com.HoodieStore.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -17,7 +18,11 @@ public interface ProductService {
 
 	public Product getProductById(Long id);
 
-	Product addproduct(Product product);
+	public Product addproduct(String productTitle, String productDescription, String productcategory, int productStock,
+			String productSize, float productPrice, int productQuantity, MultipartFile file,
+			List<MultipartFile> filelist) throws IOException;
+}
+
 
     List<Product> getProductsByCategory(String category);
 
