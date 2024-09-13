@@ -4,7 +4,8 @@ import java.util.List;
 
 import com.HoodieStore.model.contactus;
 import com.HoodieStore.repository.ContactRepository;
-import com.HoodieStore.service.ContactUsServiceImpl;
+
+import com.HoodieStore.service.ContactUsServiceimpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ContactController {
 
     @Autowired
-    private ContactUsServiceImpl contactUsServiceImpl;
+    private ContactUsServiceimpl contactUsServiceImpl;
 
     @PostMapping("/contact")
     public String submitContactForm(@RequestBody contactus contact) {

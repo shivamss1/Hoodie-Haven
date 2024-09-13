@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +10,8 @@
     <link rel="stylesheet" href="../Styles/homepage.css">
     <link rel="stylesheet" href="../Styles/Product_detail.css">
 </head>
-
 <body>
-    <!--NavBar of HomePage-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+     <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
         <div class="container ">
             <a class="navbar-brand" href="./Home.html"><img src="../Img/HH-logo.png" alt="Logo"
                     style="height: 56px;"></a>
@@ -29,19 +26,19 @@
                         <a class="nav-link " aria-current="page" href="../Web-pages/Home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../Web-pages/Product.html">Shop</a>
+                        <a class="nav-link active" href="#">Shop</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Web-pages/aboutus.html">About-Us</a>
+                        <a class="nav-link" href="#">About-Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Web-pages/contactus.html">Contact Us</a>
+                        <a class="nav-link" href="#">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../Web-pages/Login.html">
+                        <a href="../Web-pages/Login.html" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="currentColor"
                                 class="bi bi-person" viewBox="0 0 16 16">
                                 <path
@@ -62,70 +59,44 @@
             </div>
         </div>
     </nav>
-
-    <!--Product Detail section-->
-    <div class="container mt-5">
-        <div class="row">
-            <!-- Images Section -->
-            <div class="col-lg-5 col-md-6 mb-4">
-                <div class="main-image">
-                    <img src="../Img/Men's Hoodies/Baja Hoodie/Mexican Poncho Baja Hoodie/3.jpg"
-                        alt="Main Product Image" class="img-fluid">
-                </div>
-                <div class="extra_image mt-3">
-                    <img src="../Img/Men's Hoodies/Baja Hoodie/Mexican Poncho Baja Hoodie/4.jpg" alt="image 1"
-                        class="img-thumbnail">
-                    <img src="../Img/Men's Hoodies/Baja Hoodie/Mexican Poncho Baja Hoodie/5.jpg" alt="image 2"
-                        class="img-thumbnail">
-                    <img src="../Img/Men's Hoodies/Baja Hoodie/Mexican Poncho Baja Hoodie/1.jpg" alt="image 3"
-                        class="img-thumbnail">
-                    <img src="../Img/Men's Hoodies/Baja Hoodie/Mexican Poncho Baja Hoodie/il_794xN.4070653530_6vie.jpg"
-                        class="img-thumbnail">
-                </div>
-            </div>
-
-            <!-- Product Info Section -->
-            <div class="col-lg-7 col-md-6">
-                <h2 id="title">baja</h2>
-                <h4 id="price">$99.99</h4>
-
-                <div class="form-group size-selection">
-                    <label for="size">Size:</label>
-                    <select id="size" class="form-control">
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                        <option value="xxl">XXL</option>
-                    </select>
-                </div>
-
-                <div class="quantity-container form-group mt-3">
-                    <button class="btn btn-secondary quantity-button" id="decrease">-</button>
-                    <input type="number" id="quantity" value="1" min="1" class="form-control d-inline-block"
-                        style="width: 60px;">
-                    <button class="btn btn-secondary quantity-button" id="increase">+</button>
-                </div>
-
-                <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, nostrum possimus? Non
-                    dolorem dolores numquam facere voluptates voluptatum dolor nam qui architecto mollitia?</p>
-
-                <div id="button-container" class="mt-3">
-                    <button class="btn btn-primary">Add to Cart</button>
-                    <button class="btn btn-success">Buy Now</button>
-                </div>
-            </div>
+    <div class="product_detail">
+        <div id="images">
+          <div class="main-image">
+            <img src="../Img/HH-logo.png" alt="">
         </div>
+        <div class="extra_image">
+            <img src="../Img/HH-logo.png" alt="image 1">
+            <img src="../Img/HH-logo.png" alt="image2">
+            <img src="../Img/HH-logo.png" alt="image3">
+            <img src="../Img/HH-logo.png" alt="image4">
+        </div>
+
+        </div>
+        <div class="info">
+            <div>
+              <div class="title">Title</div>
+                <h4 id="price">$price</h4>
+            </div>
+            <div class="quantity-container">
+                <label for="number" id="Quantity">Quantity:</label>
+                <button class="quantity-button" id="decrease">-</button>
+                <input type="number" id="quantity" value="1" min="1">
+                <button class="quantity-button" id="increase">+</button>
+            </div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae libero natus similique minus deleniti voluptatum iure, sed, explicabo repudiandae nihil magnam in, aliquid accusantium quaerat cupiditate. Error illum qui aliquam.</p>
+        <div id="button-container">
+            <button id="addtocart">Add-to-cart</button>
+            <button id="buynow">Buy Now</button>
+        </div>
+        </div>
+        
+        
+        
     </div>
-
-
-
-
-    <!--Footer Section-->
+    
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <!-- Company Info -->
                 <div class="col-md-4">
                     <div class="footer-logo">
                         <img src="../Img/HH-logo.png" alt="Hoodie Haven Logo">
@@ -133,7 +104,6 @@
                     <h5>Hoodie Haven</h5>
                     <p>Your one-stop shop for the trendiest hoodies and apparel.</p>
                 </div>
-                <!-- Navigation Links -->
                 <div class="col-md-4">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
@@ -143,7 +113,6 @@
                         <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
-                <!-- Social Media Links -->
                 <div class="col-md-4">
                     <h5>Follow Us</h5>
                     <div class="social-icons">
@@ -154,16 +123,13 @@
                     </div>
                 </div>
             </div>
-            <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <p>&copy; 2024 Hoodie Haven. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-
-    <script src="../javascript/product_detail.js"></script>
+    <script src="../javascript/home.js"></script>
     <script src="../javascript/bootstrap.js"></script>
 </body>
-
 </html>

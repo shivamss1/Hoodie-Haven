@@ -19,17 +19,17 @@ public class UserController {
 
 	@Autowired
 	private UserServiceImpl userServiceImpl;
-	
-	
+
+
 	@PostMapping("/usersignup")
 	public String registerUser(@RequestBody User user) {
 		return userServiceImpl.registerUser(user);
 	}
-	
+
 	@GetMapping("/userlogin")
 	public String userLogin(@RequestParam("username") String username,@RequestParam("password") String password) {
 		return userServiceImpl.userLogin(username, password);
 	}
 
-	
+
 }

@@ -23,10 +23,10 @@ import com.HoodieStore.service.ProductServiceImp;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class ProductController {
-	
+
 	@Autowired
 	private ProductServiceImp ps;
-	
+
 	@PostMapping("/add-product")
 	public Product addProduct( @RequestParam("productTitle") String productTitle,
             @RequestParam("productDescription") String productDescription,
@@ -39,24 +39,29 @@ public class ProductController {
             @RequestPart("imageList") List<MultipartFile> filelist) throws IOException {
 		return ps.addproduct(productTitle,productDescription,productcategory,productStock,productSize,productPrice,productQuantity,file,filelist);
 	}
-	
+
 	@GetMapping("/products")
 	public List<Product> getProduct(){
 		return ps.getProduct();
 	}
-	
+
 	@DeleteMapping("/delete-product")
 	public String deleteProduct(@RequestParam("id") Long id) {
 		return ps.deleteproduct(id);
 	}
-	
+
 	@PutMapping("/update-stock")
 	public void updateStock(@RequestParam("quantity") int quantity,@RequestParam("id") Long id) {
 		ps.updateStock(quantity,id);
 	}
-	
+
 	@GetMapping("/product")
 	public Product getProductById(@RequestParam("id") Long id) {
 		return ps.getProductById(id);
 	}
+	@GetMapping("/category")
+	public List<Product> getProductsByCategory(@RequestParam("category") String category){
+		return ps.getProductsByCategory(category);
+	}
+
 }

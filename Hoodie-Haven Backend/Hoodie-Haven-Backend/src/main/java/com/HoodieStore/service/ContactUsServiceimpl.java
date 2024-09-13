@@ -10,7 +10,7 @@ import com.HoodieStore.model.contactus;
 import com.HoodieStore.repository.ContactRepository;
 
 @Service
-public class ContactUsServiceImpl implements ContactUsService {
+public class ContactUsServiceimpl implements ContactUsService {
 
     @Autowired
     private ContactRepository contactRepository;

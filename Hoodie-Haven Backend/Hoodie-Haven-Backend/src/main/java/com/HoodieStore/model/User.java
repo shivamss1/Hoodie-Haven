@@ -17,17 +17,17 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(unique = true,nullable = false)
 	private String username;
-	
+
 	@Column(nullable = false ,unique = true)
 	private String mailid;
-	
+
 	@Column(nullable = false)
 	private String mobileno;
-	
+
 	@Column(nullable = false)
 	private String password;
-	
+
 }

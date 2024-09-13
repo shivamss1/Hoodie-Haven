@@ -20,20 +20,20 @@ import com.HoodieStore.repository.ProductRepository;
 public class ProductServiceImp implements ProductService{
 	@Autowired
 	ProductRepository pr;
-	
 
-	
+
+
 	@Override
 	public List<Product> getProduct() {
 		return pr.findAll();
 	}
-	
+
 	@Override
 	public String deleteproduct(Long id) {
 		pr.deleteById(id);
 		return "Product has been successfully deleted.";
 	}
-	
+
 	@Override
 	public void updateStock(int quantity, Long id) {
 		Optional<Product> product=pr.findById(id);
@@ -42,8 +42,8 @@ public class ProductServiceImp implements ProductService{
 		}
 		pr.save(product.get());
 	}
-	
-	
+
+
 	@Override
 	public Product getProductById(Long id) {
 		Optional<Product> product=pr.findById(id);
@@ -51,7 +51,7 @@ public class ProductServiceImp implements ProductService{
 			return product.get();
 		}
 			return new Product();
-		
+
 	}
 
 	
@@ -88,7 +88,10 @@ public class ProductServiceImp implements ProductService{
 		return pr.save(newProduct);
 	}
 
-  
-	
-	
+	  @Override
+	    public List<Product> getProductsByCategory(String category) {
+	        return pr.findByCategory(category);
+	    }
+
+
 }
