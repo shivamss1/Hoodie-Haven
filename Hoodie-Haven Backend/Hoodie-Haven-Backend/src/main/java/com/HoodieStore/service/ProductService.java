@@ -21,7 +21,7 @@ public interface ProductService {
 	public Product addproduct(String productTitle, String productDescription, String productcategory, int productStock,
 			String productSize, float productPrice, int productQuantity, MultipartFile file,
 			List<MultipartFile> filelist) throws IOException;
-}
+
 
 
     List<Product> getProductsByCategory(String category);
