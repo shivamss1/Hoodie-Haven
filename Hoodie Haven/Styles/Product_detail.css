@@ -1,13 +1,21 @@
 
-/* Ensure container margin */
-.container {
-    margin-top: 5rem; /* Adjust top margin for spacing */
+body { 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 /* Main Image Styles */
+.main-image {  
+    height: 300px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
 .main-image img {
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;  
 }
 
 /* Extra Images */
@@ -15,11 +23,12 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    
 }
 
 .extra_image img {
     width: 100%;
-    max-width: 100px; /* Adjust as needed */
+    max-width: 100px; 
     height: auto;
 }
 
@@ -27,84 +36,6 @@
 #title {
     font-size: 2rem;
     color: #aa0f0f;
-}
-body {
-    justify-content: center; 
-    align-items: center; 
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-
-}
-
-#price {
-    margin: 10px 0;
-    font-size: 30px;
-    color: #5c0404;
-}
-
-p {
-    font-size: 20px;
-    line-height: 1.8;
-    color: #200505;
-    margin: 10px 0;
-}
-
-.product_detail {
-    display: flex;
-    margin: 10px;
-    width: 98%;
-    height: 450px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    padding: 20px;
-    box-sizing: border-box;
-    align-items: flex-start;
-}
-
-.info {
-    padding: 10px;
-    text-align: left; 
-    margin: 0; 
-    flex: 1; 
-    display: block;
-    overflow-y: auto;
-}
-
-.images {
-    width: 50%;
-    padding: 10px;
-}
-
-.main-image {
-    display: flex;
-    justify-content: center; 
-    align-items: center;    
-    height: 300px;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-}
-
-.main-image img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-.extra_image {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-}
-
-.extra_image img {
-    width: 100px;
-    height: auto;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 .title {
@@ -115,51 +46,46 @@ p {
     color: #aa0f0f;
 }
 
-.cont1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 45%;
-    padding-left: 20px;
-    gap: 15px;
-    overflow-y: auto;
-}
-#addtocart {
-    background-color: #007bff;
-    color: white;
+#price {
+    margin: 10px 0;
+    font-size: 30px;
+    color: #5c0404;
 }
 
-#buynow {
-    background: #01ad1b;
-    color: white;
+/*Description Styling*/
+p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #200505;
+    margin: 10px 0;
 }
 
+/*Quantity Section Styling*/
 .quantity-container {
-    display: flex;
-    flex: 1;
-    min-width: 150px;
-    margin-top: 10px;
+    width: 250px;
 }
 
 .quantity-button {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     background-color: #1140d9;
     border: 1px solid #ccc;
     cursor: pointer;
+}
+
+.quantity-button h6{
+    padding: 5px 0;
     font-size: 20px;
     text-align: center;
 }
-#Quantity{
-    font-size: 18px;
-}
+
 #quantity {
-    width: 50px;
+    width: 80px;
+    height: 50px;
     text-align: center;
     font-size: 18px;
     border: 1px solid #ccc;
     margin: 0 5px;
-    padding: 5px;
     border-radius: 4px;
 }
 
@@ -167,6 +93,7 @@ p {
     background-color: #e0e0e0;
 }
 
+/*Button Section Styling*/
 #button-container {
     display: flex;
     gap: 10px;
@@ -186,6 +113,16 @@ p {
 #button-container button:hover {
     background-color: #0056b3;
     transform: scale(1.05);
+}
+
+#addtocart {
+    background-color: #007bff;
+    color: white;
+}
+
+#buynow {
+    background: #01ad1b;
+    color: white;
 }
 
 @media (max-width: 768px) {
@@ -222,7 +159,6 @@ p {
     .size-selection, 
     .quantity-container {
         width: 100%;
-        justify-content: space-between;
         margin-bottom: 10px;
     }
 
@@ -255,14 +191,24 @@ p {
         font-size: 18px;
     }
 
+    .quantity-container{
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
     .quantity-button {
-        width: 28px;
-        height: 28px;
-        font-size: 18px;
+        width: 50px;
+        height: 48px;
+    }
+
+    .quantity-button h6{
+        font-size: 20px;
     }
 
     #quantity {
-        width: 40px;
+        margin: 0%;
+        width: 50px;
         font-size: 16px;
     }
 }

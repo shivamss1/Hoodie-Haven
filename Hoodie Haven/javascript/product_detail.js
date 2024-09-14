@@ -6,6 +6,7 @@ let product_detail = async () => {
     const response = await fetch(`http://localhost:8080/product?id=${product_id}`);
     const product_data = await response.json();
     let product = document.querySelector(".row");
+    product.innerHTML = "";
     product.innerHTML += `   
        
        
@@ -43,11 +44,10 @@ let product_detail = async () => {
                     </select>
                 </div>
 
-                <div class="quantity-container form-group mt-3">
-                    <button class="btn btn-secondary quantity-button" id="decrease">-</button>
-                    <input type="number" id="quantity" value="1" min="1" class="form-control d-inline-block"
-                        style="width: 60px;">
-                    <button class="btn btn-secondary quantity-button" id="increase">+</button>
+                <div class="quantity-container ">
+                    <button class="btn btn-secondary quantity-button" id="decrease"><h6>-</h6></button>
+                    <input type="number" id="quantity" value="1" min="1" class="form-control d-inline-block">
+                    <button class="btn btn-secondary quantity-button" id="increase"><h6>+</h6></button>
                 </div>
 
                 <p class="mt-3">${product_data.description}</p>
