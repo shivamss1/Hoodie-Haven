@@ -32,6 +32,22 @@
 .navbar-nav .nav-item a{
     color: #000;
 }
+
+#cart{
+    position: relative;
+}
+
+#cart span{
+    height:25px;
+    width: 20px;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    background-color: #000;
+    position: absolute;
+    top: 9% ;
+    margin-left: 10px;
+}
 /*Hero Section Style */
 
 .hero {
