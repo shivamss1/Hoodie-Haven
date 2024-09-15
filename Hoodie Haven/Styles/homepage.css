@@ -37,16 +37,16 @@
     position: relative;
 }
 
-#cart span{
+#counter{
     height:25px;
-    width: 20px;
+    width: 25px;
     border-radius: 50%;
     color: #fff;
     text-align: center;
     background-color: #000;
     position: absolute;
-    top: 9% ;
-    margin-left: 10px;
+    top: 6%;
+    margin-left: 5px;
 }
 /*Hero Section Style */
 

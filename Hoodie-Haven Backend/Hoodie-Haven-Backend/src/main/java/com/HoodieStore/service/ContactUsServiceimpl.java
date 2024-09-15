@@ -16,9 +16,12 @@ public class ContactUsServiceimpl implements ContactUsService {
     private ContactRepository contactRepository;
 
     @Override
-    public String submitContactForm(contactus contact) {
+    public void submitContactForm(String name,String email,String message) {
+    	contactus contact=new contactus();
+    	contact.setName(name);
+    	contact.setEmail(email);
+    	contact.setMessage(message);
        contactRepository.save(contact);
-       return "form submitted & massage recieved";
     }
 
     @Override
