@@ -56,7 +56,7 @@ public class ProductServiceImp implements ProductService{
 
 	
 	@Override
-	public Product addproduct(
+	public String addproduct(
 			String productTitle, 
 			String productDescription,
 			String productcategory, 
@@ -85,7 +85,9 @@ public class ProductServiceImp implements ProductService{
 		
 		newProduct.setExtraimage(extraImageByte);
 		
-		return pr.save(newProduct);
+		pr.save(newProduct);
+		
+		return "Product Added Successfully.";
 	}
 
 	  @Override

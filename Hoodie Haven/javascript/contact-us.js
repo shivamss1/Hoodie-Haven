@@ -7,7 +7,7 @@ contactform.addEventListener('submit', async function(e) {
     const urlencodeddata = new URLSearchParams(formData).toString();
 
     try {
-        const response = await fetch("http://localhost:8080/contact", {
+        const response = await fetch("http://localhost:8080/post-contact", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'

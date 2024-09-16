@@ -1,14 +1,17 @@
 document.addEventListener('DOMContentLoaded',function () {
 
-    const AddProductTab = document.getElementById("AddProductTab");
+const AddProductTab = document.getElementById("AddProductTab");
 const GetProductsTab = document.getElementById("GetProductsTab");
+const GetContactTab = document.getElementById("getContactTab");
 
 const addProductContent = document.getElementById("addProductContent");
 const getProductContent = document.getElementById("getProductContent");
+const getContactContent = document.getElementById("getContactContent");
 
 function showTab(showcontent) {
     addProductContent.classList.remove('show', 'active');
     getProductContent.classList.remove('show', 'active');
+    getContactContent.classList.remove('show','active');
     showcontent.classList.add('show','active');
 }
 
@@ -22,6 +25,12 @@ function showTab(showcontent) {
         e.preventDefault();
         showTab(getProductContent);
         getproducts();
+    });
+
+    GetContactTab.addEventListener('click', function (e) {
+        e.preventDefault();
+        showTab(getContactContent);
+        getcontacts();
     });
 })
 
@@ -48,11 +57,27 @@ async function getproducts ()  {
     
 }
 
+async function getcontacts() {
+    let tablerow1 = document.getElementById("tablerow1");
+    tablerow1.innerHTML = "";
+    let contactdata = await fetch('http://localhost:8080/getAllContacts');
+    let contacts = await contactdata.json();
+    contacts.forEach(contact => {
+        tablerow1.innerHTML += `
+        <tr class="table-primary">
+        <td scope="row">${contact.name}</td>
+        <td scope="row">${contact.email}</td>
+        <td scope="row">${contact.message}</td>
+        </tr>
+        `;
+    });
+}
+
 async function deleteproduct(product_id) {
     let response = await fetch(`http://localhost:8080/delete-product?id=${product_id}`, {
         method: 'DELETE',
     });
-    if (response.ok) {
+    if (response.status==204) {
         alert('Product deleted successfully');
         getproducts(); // Refresh the product list after deletion
     } else {

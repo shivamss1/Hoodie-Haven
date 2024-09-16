@@ -1,6 +1,8 @@
 package com.HoodieStore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,13 +24,18 @@ public class UserController {
 
 
 	@PostMapping("/usersignup")
-	public String registerUser(@RequestBody User user) {
-		return userServiceImpl.registerUser(user);
+	public ResponseEntity<String> registerUser(@RequestBody User user) {
+		try {
+			return new ResponseEntity(userServiceImpl.registerUser(user),HttpStatus.CREATED);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
+		} 
 	}
 
 	@GetMapping("/userlogin")
-	public String userLogin(@RequestParam("username") String username,@RequestParam("password") String password) {
-		return userServiceImpl.userLogin(username, password);
+	public ResponseEntity<String> userLogin(@RequestParam("username") String username,@RequestParam("password") String password) {
+		return new ResponseEntity(userServiceImpl.userLogin(username, password),HttpStatus.OK);
 	}
 
 
