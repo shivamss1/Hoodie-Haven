@@ -107,7 +107,7 @@ body {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 10px 20px;
+   padding: 10px 20px;
     margin: 5px 0;
     background-color: rgb(33, 33, 33);
     color: #fff;
@@ -134,14 +134,29 @@ body {
     background-color: rgba(58, 230, 58, 0.619);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
+    .product-card {
+        height:auto;
+    }
     .product-section {
-        flex-direction: column;
+       /* flex-direction: column;*/
+        height: auto;
+
+    }
+    .product-card img {
+        height: 200px;
+        object-fit: cover; 
     }
 
+    .products {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        gap: 10px; 
+        height: auto;
+        }
     .category {
-        margin-right: 0;
+        margin-right: 2%;
         margin-bottom: 20px;
     }
+    
 }

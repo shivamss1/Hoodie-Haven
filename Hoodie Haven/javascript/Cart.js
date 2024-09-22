@@ -1,33 +1,88 @@
 let CartDiv = document.querySelector("#cart-container");
+let  carttotal = document.querySelector("#total");
+let tally=document.getElementById("tally");
+var total=0;
 let displayProduct = async () => {
     CartDiv.innerHTML = "";
+    carttotal.innerHTML="";
+    
     let allproduct = await fetch("http://localhost:8080/getcart");
     let products = await allproduct.json();
-    console.log(products);
+    total=0;
+   
     products.forEach(cartItem => { 
-        console.log(cartItem.p_id);
+          
         let product = cartItem.product;
+        console.log(product);
+
         CartDiv.innerHTML +=`
+        
        <div class="product-details">
             <img src=src="${product.mainimage}" class="product-image">
-            <h1 class="product-name">"${product.title}"</h1>
+            <h1 class="product-name">${product.title}</h1>
             <p class="product-description">"${product.description}"</p>
-            <span class="price">"${product.price}"</span>
+            <span class="price">${product.price}</span>
     
             <form class="add-to-cart-form">
                 <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" value="1">
+                <input type="number" id="quantity" onchange="updateTotal(${product.price},${cartItem.cartId})" name="quantity" min="1" value="1">
             </form>
            <div class="button">
             <button class="continue-shopping">Continue Shopping</button>
             <button class="checkout-button">Proceed to Checkout</button>
             <button class="remove-button"  data-cart-id="${cartItem.cartId}">Romove-Product</button>
            </div>
-        </div>`
+        </div>`;
+       total+=product.price;
 })
+products.forEach(item =>{
+    let product=item.product;
+    console.log(product);
+    carttotal.innerHTML+=`<div class="productPrice">
+               <h2>${product.title}</h2>
+               <h2>$${product.price}</h2>
+            </div>
+
+            `
+})
+
+tally.innerHTML=`
+    <h2>Total Amount</h2>
+    <h2>$${total}</h2>`
+
 removefromcart();
+
+ 
+  
+ 
+
+        
+};
+function updateTotal() {
+    total = 0;
+    let quantityInputs = document.querySelectorAll("#quantity");
+    carttotal.innerHTML="";
+    quantityInputs.forEach(input => {
+        let quantity = parseInt(input.value);
+        console.log(quantity);
+        let priceText= input.closest('.product-details').querySelector('.price').textContent.replace('$', '');
+        console.log(priceText)
+        total += priceText * quantity; 
+        let productTitle = input.closest('.product-details').querySelector('.product-name').textContent;
+    console.log(productTitle);
+        carttotal.innerHTML += `
+            <div class="productPrice">
+                <h2>${productTitle}</h2>
+                <h2>$${(priceText * quantity).toFixed(2)}</h2>
+            </div>`;
+    });
+    
+
+    tally.innerHTML = `
+        <h2>Total Amount</h2>
+        <h2>$${total}</h2>`; 
 }
-;
+
 let removefromcart= () => {
     let removeButtons = document.querySelectorAll('.remove-button');
 
@@ -47,7 +102,11 @@ let removefromcart= () => {
             }
         });
     });
+
 };
+
+    
+         
 
 
 window.onload = displayProduct;
