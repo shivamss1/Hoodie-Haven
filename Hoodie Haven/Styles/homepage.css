@@ -122,6 +122,25 @@
     justify-content: center;
 }
 
+#grid-item1{
+    background-image: url(../Img/);
+    background-size: cover;
+    background-position: top center;
+    
+}
+#grid-item2{
+    background-image: url(../Img/);
+    background-size: cover;
+    background-position: top center;
+    
+}
+#grid-item3{
+    background-image: url(../Img/Baja_Hoodie/Mexican-Poncho-Baja-Hoodie/4.jpg);
+    background-size: cover;
+    background-position: top center;
+    
+}
+
 .grid-item h2 {
     margin-bottom: 20px;
     font-weight: bold;

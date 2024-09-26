@@ -1,7 +1,7 @@
 let productDiv = document.querySelector(".products");
 let displayProduct = async () => {
     productDiv.innerHTML = "";
-    let allproduct = await fetch("http://localhost:8080/products");
+    let allproduct = await fetch("http://localhost:8080/product/products");
     let products = await allproduct.json();
     console.log(products);
     products.forEach(element => { 

@@ -37,7 +37,7 @@ function showTab(showcontent) {
 async function getproducts ()  {
     let tablerow = document.getElementById("tablerow");
     tablerow.innerHTML = "";
-    let productdata = await fetch('http://localhost:8080/products');
+    let productdata = await fetch('http://localhost:8080/product/products');
         let products = await productdata.json();
     products.forEach(product => {
         tablerow.innerHTML += `
@@ -60,7 +60,7 @@ async function getproducts ()  {
 async function getcontacts() {
     let tablerow1 = document.getElementById("tablerow1");
     tablerow1.innerHTML = "";
-    let contactdata = await fetch('http://localhost:8080/getAllContacts');
+    let contactdata = await fetch('http://localhost:8080/contact/getAllContacts');
     let contacts = await contactdata.json();
     contacts.forEach(contact => {
         tablerow1.innerHTML += `
@@ -74,7 +74,7 @@ async function getcontacts() {
 }
 
 async function deleteproduct(product_id) {
-    let response = await fetch(`http://localhost:8080/delete-product?id=${product_id}`, {
+    let response = await fetch(`http://localhost:8080/product/delete-product?id=${product_id}`, {
         method: 'DELETE',
     });
     if (response.status==204) {

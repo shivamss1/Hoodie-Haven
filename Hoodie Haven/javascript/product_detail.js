@@ -3,7 +3,7 @@ const product_id = urlParams.get("id");
 console.log(product_id);
 
 let product_detail = async () => {
-    const response = await fetch(`http://localhost:8080/id?id=${product_id}`);
+    const response = await fetch(`http://localhost:8080/product/id?id=${product_id}`);
     const product_data = await response.json();
     let product = document.querySelector(".row");
     product.innerHTML = "";

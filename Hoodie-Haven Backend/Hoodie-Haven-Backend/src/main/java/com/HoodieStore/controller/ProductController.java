@@ -26,6 +26,7 @@ import com.HoodieStore.service.ProductServiceImp;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
+@RequestMapping("/product")
 public class ProductController {
 
 	@Autowired

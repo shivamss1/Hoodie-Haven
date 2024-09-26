@@ -18,7 +18,7 @@ import com.HoodieStore.service.ContactUsServiceimpl;
 
 @CrossOrigin("*")
 @RestController
-
+@RequestMapping("/contact")
 public class ContactController {
 
     @Autowired
