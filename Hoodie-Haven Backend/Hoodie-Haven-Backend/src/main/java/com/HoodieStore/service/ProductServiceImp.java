@@ -38,7 +38,7 @@ public class ProductServiceImp implements ProductService{
 	public void updateStock(int quantity, Long id) {
 		Optional<Product> product=pr.findById(id);
 		if(product.isPresent()) {
-			product.get().setStock(product.get().getStock()-quantity);
+			product.get().setStock(quantity);
 		}
 		pr.save(product.get());
 	}

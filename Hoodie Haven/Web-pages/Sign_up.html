@@ -66,7 +66,7 @@
     <div class="sign-up-container">
         <div class="container  sign-up my-4">
             <h1 class="text-center text-capitalize">Sign Up</h1>
-            <form class="sign-up-form mb-5">
+            <form class="sign-up-form mb-5" id="user-register">
                 <div class="form-group">
                     <label for="username">Username :</label>
                     <input type="text" name="username" id="username" required>
@@ -77,15 +77,11 @@
                 </div>
                 <div class="form-group">
                     <label for="mobile-no">Mobile-No :</label>
-                    <input type="number" name="mobile-no" id="mobile-no" required>
+                    <input type="number" name="mobileno" id="mobileno" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password :</label>
                     <input type="password" name="password" id="password" required>
-                </div>
-                <div class="form-group">
-                    <label for="confirm-password">Confirm Password :</label>
-                    <input type="password" name="confirm-password" id="confirm-password" required>
                 </div>
                 <button type="submit" class="btn-sign-up ">Sign-Up</button>
                 <h6 class="text-center mt-3"><strong>Already have account ? <span><a
@@ -133,6 +129,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="../javascript/Signup.js"></script>
 </body>
 
 </html>

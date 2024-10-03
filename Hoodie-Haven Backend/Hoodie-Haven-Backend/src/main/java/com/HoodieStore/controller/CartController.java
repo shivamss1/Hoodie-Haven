@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.HoodieStore.model.Cart;
 import com.HoodieStore.service.CartService;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+
 @RestController
 @RequestMapping("/cart")
 public class CartController {

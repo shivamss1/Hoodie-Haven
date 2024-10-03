@@ -34,10 +34,20 @@ function showTab(showcontent) {
     });
 })
 
+
+
+
 async function getproducts ()  {
     let tablerow = document.getElementById("tablerow");
     tablerow.innerHTML = "";
-    let productdata = await fetch('http://localhost:8080/product/products');
+    const username = "shreya";
+const password = "shreya12";
+    const header = new Headers();
+header.append('Authorization', 'Basic ' + btoa(username + ':' + password));
+    let productdata = await fetch('http://localhost:8080/product/products', {
+        headers: header,
+        method: 'GET', 
+    });
         let products = await productdata.json();
     products.forEach(product => {
         tablerow.innerHTML += `
@@ -60,7 +70,14 @@ async function getproducts ()  {
 async function getcontacts() {
     let tablerow1 = document.getElementById("tablerow1");
     tablerow1.innerHTML = "";
-    let contactdata = await fetch('http://localhost:8080/contact/getAllContacts');
+    const username = "shreya";
+const password = "shreya12";
+    const header = new Headers();
+header.append('Authorization', 'Basic ' + btoa(username + ':' + password));
+    let contactdata = await fetch('http://localhost:8080/contact/getAllContacts', {
+        headers: header,
+        method: 'GET', 
+    });
     let contacts = await contactdata.json();
     contacts.forEach(contact => {
         tablerow1.innerHTML += `
@@ -74,8 +91,13 @@ async function getcontacts() {
 }
 
 async function deleteproduct(product_id) {
+    const username = "shreya";
+    const password = "shreya12";
+    const header = new Headers();
+    header.append('Authorization', 'Basic ' + btoa(username + ':' + password));
     let response = await fetch(`http://localhost:8080/product/delete-product?id=${product_id}`, {
         method: 'DELETE',
+        headers: header,
     });
     if (response.status==204) {
         alert('Product deleted successfully');
