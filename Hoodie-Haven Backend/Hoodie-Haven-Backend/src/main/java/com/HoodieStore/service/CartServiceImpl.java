@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.HoodieStore.model.Cart;
 import com.HoodieStore.model.Product;
+import com.HoodieStore.model.User;
 import com.HoodieStore.repository.CartRepository;
 import com.HoodieStore.repository.ProductRepository;
+import com.HoodieStore.repository.UserRepository;
 
 @Service
 public class CartServiceImpl implements CartService {
@@ -20,24 +22,37 @@ public class CartServiceImpl implements CartService {
     @Autowired
     private ProductRepository productRepository;
 
-    @Override
-    public String addtocart(long productId) {
-        Optional<Product> optionalProduct = productRepository.findById(productId);
-        
-        
-            Product product = optionalProduct.get();
-            
-            Optional<Cart> CartProduct = cr.findByproduct_id(productId);
-            if (CartProduct.isPresent()) {
-                return "Product already present in Cart";
-            } else {
-                Cart cart = new Cart();
-                cart.setProduct(product);
-                cr.save(cart);
-                return "Product added successfully in cart";
-            }
-        } 
+    @Autowired
+    private UserRepository userRepository;
 
+    @Override
+    public String addtocart(long userId, long productId) {
+        Optional<User> optionalUser = userRepository.findById(userId);
+        if (!optionalUser.isPresent()) {
+            return "User not found";
+        }
+
+        User user = optionalUser.get();
+
+        Optional<Product> optionalProduct = productRepository.findById(productId);
+        if (!optionalProduct.isPresent()) {
+            return "Product not found";
+        }
+
+        Product product = optionalProduct.get();
+
+        Optional<Cart> cartProduct = cr.findByUserIdAndProductId(userId, productId);
+        if (cartProduct.isPresent()) {
+            return "Product already present in Cart";
+        } else {
+            Cart cart = new Cart();
+            cart.setUser(user);
+            cart.setProduct(product);
+            cr.save(cart);
+            return "Product added successfully in cart";
+        }
+    } 
+    @Override
     public String deletebycartId(int cartId) {
     	Optional<Cart> cart=cr.findById(cartId);
 		if(cart.isPresent()) {
@@ -49,12 +64,11 @@ public class CartServiceImpl implements CartService {
 		}
 			
     }
-    public List<Cart> getcart() {
-		return cr.findAll();
-	}
+   
 
-	
-	
-	
+    @Override
+    public List<Cart> getcart(long userId) {
+        return cr.findByUserId(userId); // Change here
+    }
 	
 }

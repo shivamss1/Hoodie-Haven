@@ -127,8 +127,29 @@
 
 
 /*Featured Card Section*/
+#cart{
+    display: flex;
+}
+#cartItemno{
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: coral;
+    color: white;
+    position: relative;   
+    align-items: center;
+    justify-content: center;
+    display: flex;
 
-
+}
+#cart div{
+    margin-left: 5px;
+}
+#cartItemno h2{
+    font-size: 20px;
+    padding-top: 30%;
+    
+}
 .card-img-top {
     width: 100%;
     height: auto;

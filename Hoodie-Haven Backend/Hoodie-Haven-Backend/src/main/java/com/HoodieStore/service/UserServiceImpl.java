@@ -30,7 +30,9 @@ public class UserServiceImpl implements UserService{
 		Optional <User> user=userRepository.findByusername(username);
 		if(user.isPresent()) {
 			if(user.get().getPassword().equals(password)) {
-				return "Login Successfully.";
+				String userId = String.valueOf(user.get().getId());  
+				return "Login Successfully. User ID: " + userId;
+			
 			}else {
 				return "Incorrect Username or Password.";
 			}

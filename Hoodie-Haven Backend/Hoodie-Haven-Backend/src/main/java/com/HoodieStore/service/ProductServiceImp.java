@@ -55,11 +55,15 @@ public class ProductServiceImp implements ProductService{
 	public Product addproduct(Product product) {
 		return pr.save(product);
 	}
+	@Override
+	public List<Product> getProductsByCategory(List<String> category) {
+		return pr.findByCategoryIn(category);
+		
+	}
 
-	  @Override
-	    public List<Product> getProductsByCategory(String category) {
-	        return pr.findByCategory(category);
-	    }
+	
+
+	  
 
 
 }

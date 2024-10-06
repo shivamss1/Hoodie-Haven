@@ -1,6 +1,7 @@
 package com.HoodieStore.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,8 +21,8 @@ public class CartController {
    private CartService cartService;
 	
 	@PostMapping("/addToCart")
-	public String addtocart(long productId) {
-		return cartService.addtocart(productId);
+	public String addtocart(long userId,long productId) {
+		return cartService.addtocart(userId, productId);
 	}
 	
 	@DeleteMapping("/deletebycartId")
@@ -29,9 +30,9 @@ public class CartController {
 		return cartService.deletebycartId(cartid);
 	}
 	@GetMapping("/getcart")
-		public List<Cart> getcart(){
-			return cartService.getcart();
-		}
+	public List<Cart> getcart(@RequestParam("userid") long userid) {
+	    return cartService.getcart(userid); // Change here
+	}
 	}
 
      

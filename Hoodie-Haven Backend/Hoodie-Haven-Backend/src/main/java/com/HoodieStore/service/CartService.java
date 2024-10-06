@@ -7,9 +7,10 @@ import java.util.Optional;
 import com.HoodieStore.model.Cart;
 
 public interface CartService {
-	 String addtocart(long productId);
 	 String deletebycartId(int cartId);
-	  List<Cart> getcart();
+	 
+	 List<Cart> getcart(long userId);
+	String addtocart(long userId, long productId);
 	
 	
 }

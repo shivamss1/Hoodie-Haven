@@ -10,7 +10,7 @@ import com.HoodieStore.model.Product;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-	List<Product> findByCategory(String category);
+	List<Product> findByCategoryIn(List<String> categories);
 
 
 

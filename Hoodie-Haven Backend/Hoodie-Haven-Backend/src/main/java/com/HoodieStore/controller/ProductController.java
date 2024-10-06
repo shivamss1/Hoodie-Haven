@@ -50,7 +50,7 @@ public class ProductController {
 		return ps.getProductById(id);
 	}
 	@GetMapping("/category")
-	public List<Product> getProductsByCategory(@RequestParam("category") String category){
+	public List<Product> getProductsByCategory(@RequestParam("category") List <String> category){
 		return ps.getProductsByCategory(category);
 	}
 

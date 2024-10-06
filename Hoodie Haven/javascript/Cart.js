@@ -1,19 +1,29 @@
 let CartDiv = document.querySelector("#cart-container");
 let  carttotal = document.querySelector("#total");
 let tally=document.getElementById("tally");
-var total=0;
+
+  var productLength;
+  const userId = localStorage.getItem('userId');
+  console.log(userId);
+
+
 let displayProduct = async () => {
     CartDiv.innerHTML = "";
     carttotal.innerHTML="";
     
-    let allproduct = await fetch("http://localhost:8080/getcart");
+    let allproduct = await fetch(`http://localhost:8080/getcart?userid=${userId}`);
     let products = await allproduct.json();
+    console.log(products);
+     productLength=products.length;
+
+    console.log(productLength);
+   
     total=0;
    
     products.forEach(cartItem => { 
           
         let product = cartItem.product;
-        console.log(product);
+
 
         CartDiv.innerHTML +=`
         
