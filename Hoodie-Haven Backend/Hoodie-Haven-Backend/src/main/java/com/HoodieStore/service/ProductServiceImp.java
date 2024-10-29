@@ -38,7 +38,7 @@ public class ProductServiceImp implements ProductService{
 	public void updateStock(int quantity, Long id) {
 		Optional<Product> product=pr.findById(id);
 		if(product.isPresent()) {
-			product.get().setStock(product.get().getStock()-quantity);
+			product.get().setStock(quantity);
 		}
 		pr.save(product.get());
 	}
@@ -56,7 +56,7 @@ public class ProductServiceImp implements ProductService{
 
 	
 	@Override
-	public Product addproduct(
+	public String addproduct(
 			String productTitle, 
 			String productDescription,
 			String productcategory, 
@@ -85,7 +85,9 @@ public class ProductServiceImp implements ProductService{
 		
 		newProduct.setExtraimage(extraImageByte);
 		
-		return pr.save(newProduct);
+		pr.save(newProduct);
+		
+		return "Product Added Successfully.";
 	}
 
 	  @Override

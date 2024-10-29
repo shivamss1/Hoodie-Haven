@@ -18,7 +18,7 @@ public interface ProductService {
 
 	public Product getProductById(Long id);
 
-	public Product addproduct(String productTitle, String productDescription, String productcategory, int productStock,
+	public String addproduct(String productTitle, String productDescription, String productcategory, int productStock,
 			String productSize, float productPrice, int productQuantity, MultipartFile file,
 			List<MultipartFile> filelist) throws IOException;
 

@@ -1,8 +1,14 @@
 package com.HoodieStore.service;
 
-import java.util.Optional;
+import java.util.Arrays;
+
+
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.HoodieStore.model.User;
@@ -14,12 +20,23 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private UserRepository userRepository;
 
+	@Autowired
+	AuthenticationManager authenticationManager;
+	
+	@Autowired
+	JWTService jwtservice;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	@Override
 	public String registerUser(User user) {
-	 Optional<User> extistusername= userRepository.findByusername(user.getUsername());
-	if(extistusername.isPresent()){
+	 User extistusername= userRepository.findByusername(user.getUsername());
+	if(extistusername!=null){
 		 return "User Already exists";
 	 }else {
+		 user.setRoles(Arrays.asList("ROLE_USER"));
+		 user.setPassword(passwordEncoder.encode(user.getPassword()));
 		 userRepository.save(user);
 		 return "User Registered Successfully.";
 	 }
@@ -27,15 +44,11 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public String userLogin(String username, String password) {
-		Optional <User> user=userRepository.findByusername(username);
-		if(user.isPresent()) {
-			if(user.get().getPassword().equals(password)) {
-				return "Login Successfully.";
-			}else {
-				return "Incorrect Username or Password.";
-			}
-		}else {
-			return "Incorrect Username or Password.";
-		}
+		Authentication auth= authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+		if(auth.isAuthenticated()) 
+			return jwtservice.generateToken(username);
+		
+	return "Invalid Username or Password!";
+		
 	}
 }

@@ -31,27 +31,27 @@
                         <a class="nav-link" href="../Web-pages/product.html">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="../Web-pages/aboutus.html">About-Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../Web-pages/contactus.html">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                            class="bi bi-person" viewBox="0 0 16 16">
-                            <path
-                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                        <a href="../Web-pages/Sign_up.html"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"
+                            viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-width="1.5"
+                                d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                         </svg>
+                    </a>
                     </li>
-                    <li class="nav-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                            class="bi bi-cart" viewBox="0 0 16 16">
-                            <path
-                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                    <li class="nav-item" id="cart">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"
+                            viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
                         </svg>
+                        <span id="counter">0</span>
                     </li>
                 </ul>
             </div>
@@ -137,23 +137,23 @@
         <div class="row g-4">
             <!-- Hoodie 1 -->
             <div class="col-lg-4 col-md-6">
-                <div class="grid-item" style="background-image: url('../Img/hero1.jpg');">
-                    <h2>Classic Hoodie</h2>
-                    <a href="#" class="btn">Shop Now</a>
+                <div class="grid-item"  id="grid-item1">
+                    <h2>Baja Hoodies</h2>
+                    <a href="../Web-pages/Product.html" class="btn">Shop Now</a>
                 </div>
             </div>
             <!-- Hoodie 2 -->
             <div class="col-lg-4 col-md-6">
-                <div class="grid-item" style="background-image: url('../Img/hero5.jpg');">
-                    <h2>Sport Hoodie</h2>
-                    <a href="#" class="btn">Shop Now</a>
+                <div class="grid-item"  id="grid-item2">
+                    <h2>Misty Forest Hoodie</h2>
+                    <a href="../Web-pages/Product.html" class="btn">Shop Now</a>
                 </div>
             </div>
             <!-- Hoodie 3 -->
             <div class="col-lg-4 col-md-12">
-                <div class="grid-item" style="background-image: url('../Img/hero3.jpg');">
-                    <h2>Urban Hoodie</h2>
-                    <a href="#" class="btn">Shop Now</a>
+                <div class="grid-item"  id="grid-item3">
+                    <h2>Ancient Dragon Hoodie</h2>
+                    <a href="../Web-pages/Product.html" class="btn">Shop Now</a>
                 </div>
             </div>
         </div>
@@ -161,11 +161,11 @@
 
 
     <!--Featured Card Section-->
-    <div class="container-fluid my-5">
+    <!-- <div class="container-fluid my-5">
         <h2 class="text-center mb-4">Featured Products</h2>
-        <div class="row">
-            <!-- Product Card 1 -->
-            <div class="col-md-4 mb-4">
+        <div class="row"> -->
+    <!-- Product Card 1 -->
+    <!-- <div class="col-md-4 mb-4">
                 <div class="card">
                     <img src="../Img/Men's Hoodies/Baja Hoodie/Mexican Poncho Baja Hoodie/4.jpg" class="card-img-top"
                         alt="Product 1">
@@ -175,9 +175,9 @@
                         <button class="btn-border-only">Buy Now</button>
                     </div>
                 </div>
-            </div>
-            <!-- Product Card 2 -->
-            <div class="col-md-4 mb-4">
+            </div> -->
+    <!-- Product Card 2 -->
+    <!-- <div class="col-md-4 mb-4">
                 <div class="card" id="card1">
                     <img src="../Img/Women Hoodies/Oversized Hoodies women/Product 2/579ed9237a075770cbe56482972a2e13a1ff8dcd.avif"
                         class="card-img-top" alt="Product 2">
@@ -187,9 +187,9 @@
                         <button class="btn-border-only">Buy Now</button>
                     </div>
                 </div>
-            </div>
-            <!-- Product Card 3 -->
-            <div class="col-md-4 mb-4">
+            </div> -->
+    <!-- Product Card 3 -->
+    <!-- <div class="col-md-4 mb-4">
                 <div class="card">
                     <img src="../Img/Men's Hoodies/Motorcycle Hoodie/Stealth-Pro-Grey-Lifestyle-2-300x300.jpg"
                         class="card-img-top" alt="Product 3">
@@ -201,7 +201,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!--Footer Section-->
     <footer class="footer">
@@ -220,9 +220,9 @@
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="../Web-pages/Product.html">Shop</a></li>
+                        <li><a href="../Web-pages/aboutus.html">About Us</a></li>
+                        <li><a href="../Web-pages/contactus.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- Social Media Links -->
