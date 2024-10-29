@@ -16,7 +16,6 @@ loginform.addEventListener("submit", async function (e) {
   })
   if (response.ok) {
     let token =  await response.text();
-    console.log(token);
     localStorage.setItem('token', token);
     console.log("hi logged in!");
     window.location.href = "../Web-pages/Home.html";
