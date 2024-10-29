@@ -6,5 +6,5 @@ public interface UserService {
 
 	String registerUser(User user);
 
-//	String userLogin(String username,String password);
+	String userLogin(String username,String password);
 }

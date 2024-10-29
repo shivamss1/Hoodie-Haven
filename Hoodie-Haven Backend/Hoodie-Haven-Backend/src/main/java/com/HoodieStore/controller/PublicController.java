@@ -1,14 +1,16 @@
 package com.HoodieStore.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,6 +47,22 @@ public class PublicController {
 			return new ResponseEntity<List<Product>>(HttpStatus.NO_CONTENT);
 		}
 		
+	}
+	
+	@GetMapping("/status")
+	public ResponseEntity<Map<String,Object>> getAuthicationStatus(Authentication authentication){
+		Map<String,Object> response=new HashMap<String,Object>();
+		 System.out.println("Authentication: " + authentication);
+		if(authentication!=null&& authentication.isAuthenticated()) {
+			
+			boolean isAdmin=authentication.getAuthorities().stream().anyMatch(grantedAuthority->grantedAuthority.getAuthority().equals("ROLE_ADMIN"));
+			response.put("authenticated", true);
+			response.put("isAdmin", isAdmin);
+		}else {
+			response.put("authenticated", false);
+			response.put("isAdmin",false);
+		}
+		return ResponseEntity.ok(response);
 	}
 	
 }

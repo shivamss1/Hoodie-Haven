@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.HoodieStore.model.User;
@@ -34,10 +35,10 @@ public class UserController {
 
 	}
 
-//	@GetMapping("/userlogin")
-//	public ResponseEntity<String> userLogin(@RequestParam("username") String username,@RequestParam("password") String password) {
-//		return new ResponseEntity(userServiceImpl.userLogin(username, password),HttpStatus.OK);
-//	}
+	@PostMapping("/login")
+	public String userLogin(@RequestParam("username") String username,@RequestParam("password") String password) {
+		return userServiceImpl.userLogin(username, password);
+	}
 
 
 }

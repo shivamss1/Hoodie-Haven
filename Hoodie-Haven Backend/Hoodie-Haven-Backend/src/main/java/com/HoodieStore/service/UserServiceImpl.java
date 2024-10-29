@@ -1,9 +1,13 @@
 package com.HoodieStore.service;
 
 import java.util.Arrays;
-import java.util.Optional;
+
+
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +20,12 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private UserRepository userRepository;
 
+	@Autowired
+	AuthenticationManager authenticationManager;
+	
+	@Autowired
+	JWTService jwtservice;
+	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
@@ -32,17 +42,13 @@ public class UserServiceImpl implements UserService{
 	 }
 	}
 
-//	@Override
-//	public String userLogin(String username, String password) {
-//		User user=userRepository.findByusername(username);
-//		if(user!=null) {
-//			if(user.getPassword().equals(password)) {
-//				return "Login Successfully.";
-//			}else {
-//				return "Incorrect Username or Password.";
-//			}
-//		}else {
-//			return "Incorrect Username or Password.";
-//		}
-//	}
+	@Override
+	public String userLogin(String username, String password) {
+		Authentication auth= authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+		if(auth.isAuthenticated()) 
+			return jwtservice.generateToken(username);
+		
+	return "Invalid Username or Password!";
+		
+	}
 }
