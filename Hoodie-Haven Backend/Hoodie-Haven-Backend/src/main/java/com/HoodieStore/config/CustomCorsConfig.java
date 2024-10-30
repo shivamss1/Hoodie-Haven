@@ -18,7 +18,7 @@ public class CustomCorsConfig {
      CorsConfigurationSource customcorsConfigurationSource() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Arrays.asList("http://192.168.30.127:5500")); // Allowing origins
+        config.setAllowedOrigins(Arrays.asList("http://192.168.178.127:5500")); // Allowing origins
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Allowed methods
         config.setAllowedHeaders(Arrays.asList("*")); // Allow all headers
         config.setAllowCredentials(true); // Allow credentials

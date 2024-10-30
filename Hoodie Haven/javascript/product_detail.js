@@ -1,9 +1,9 @@
 const urlParams = new URLSearchParams(window.location.search);
 const product_id = urlParams.get("id");
-console.log(product_id);
+
 
 let product_detail = async () => {
-    const response = await fetch(`http://localhost:8080/product/id?id=${product_id}`);
+    const response = await fetch(`http://localhost:8080/public/id?id=${product_id}`);
     const product_data = await response.json();
     let product = document.querySelector(".row");
     product.innerHTML = "";
@@ -14,17 +14,17 @@ let product_detail = async () => {
             <div class="col-lg-5 col-md-6 mb-4">
                 <div class="main-image">
                     <img src="data:image/jpeg;base64,${product_data.mainimage}"
-                        alt="Main Product Image" class="img-fluid">
+                        alt="Main Product Image" id="main-image" class="img-fluid">
                 </div>
                 <div class="extra_image mt-3">
                     <img src="data:image/jpeg;base64,${product_data.extraimage[0]}" alt="image 1"
-                        class="img-thumbnail">
+                        id="image1" class="img-thumbnail" onclick="imageslider(this.src)">
                     <img src="data:image/jpeg;base64,${product_data.extraimage[1]}" alt="image 2"
-                        class="img-thumbnail">
+                        id="image2" class="img-thumbnail" onclick="imageslider(this.src)">
                     <img src="data:image/jpeg;base64,${product_data.extraimage[2]}" alt="image 3"
-                        class="img-thumbnail">
+                       id="image3" class="img-thumbnail" onclick="imageslider(this.src)">
                     <img src="data:image/jpeg;base64,${product_data.extraimage[3]}"
-                        class="img-thumbnail">
+                        id="image4" class="img-thumbnail" onclick="imageslider(this.src)">
                 </div>
             </div>
 
@@ -45,9 +45,9 @@ let product_detail = async () => {
                 </div>
 
                 <div class="quantity-container ">
-                    <button class="btn btn-secondary quantity-button" id="decrease"><h6>-</h6></button>
+                    <button class="btn btn-secondary quantity-button" id="decrease" onclick="decrementor()"><h6>-</h6></button>
                     <input type="number" id="quantity" value="1" min="1" class="form-control d-inline-block">
-                    <button class="btn btn-secondary quantity-button" id="increase"><h6>+</h6></button>
+                    <button class="btn btn-secondary quantity-button" id="increase" onclick="incrementor()"><h6>+</h6></button>
                 </div>
 
                 <p class="mt-3">${product_data.description}</p>
@@ -59,6 +59,28 @@ let product_detail = async () => {
             </div>
     
         `;
-} 
+    quantityInput = document.getElementById("quantity");
+}; 
+
+
+
+function incrementor() {
+    let currentQuantity = parseInt(quantityInput.value);
+    quantityInput.value = currentQuantity + 1;
+}
+
+function decrementor() {
+    let currentQuantity = parseInt(quantityInput.value);
+    if (currentQuantity>1) {
+        quantityInput.value = currentQuantity-1;    
+    }
+    
+}
+
+function imageslider(imagename) {
+    let currentmainImage = document.getElementById("main-image");
+    currentmainImage.src = imagename;
+}
+
 
 window.onload =product_detail;

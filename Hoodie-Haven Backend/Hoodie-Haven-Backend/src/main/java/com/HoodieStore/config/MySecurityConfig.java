@@ -35,8 +35,9 @@ public class MySecurityConfig {
 	@Bean
 	SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests((requests) -> requests
-				.requestMatchers("/public/**","/user/**","/contact/postcontact","/product/products").permitAll()
+				.requestMatchers("/public/**","/user/**","/contact/postcontact","/product/products","/public/id").permitAll()
 				.requestMatchers(HttpMethod.GET,"/contact/getAllContacts").hasAnyRole("ADMIN")
+				.requestMatchers(HttpMethod.GET,"/public/id").hasAnyRole("ADMIN","USER")
 				.requestMatchers(HttpMethod.POST,"/product/add-product").hasAnyRole("ADMIN")
 				.requestMatchers(HttpMethod.PUT,"/product/update-stock").hasAnyRole("ADMIN")
 				.requestMatchers(HttpMethod.DELETE,"/product/deleteproduct").hasAnyRole("ADMIN")
